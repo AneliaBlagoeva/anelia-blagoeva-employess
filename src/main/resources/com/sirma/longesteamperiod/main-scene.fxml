@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?> 
+<?import javafx.collections.*?> 
+<?import fxmltableview.*?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.stage.FileChooser?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.sirma.longesteamperiod.RecordController"
+            prefHeight="100.0" prefWidth="350.0" spacing="10" alignment="CENTER">
+
+	<ImageView fitHeight="150.0" fitWidth="800" layoutX="188.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                  <Image url="@logo.jpeg" />
+              </image>
+    </ImageView>
+          
+          
+    <Label fx:id="path"/>
+   
+    <Button onAction="#browse">Browse</Button>
+    
+    <Button onAction="#calculatePeriod">Calculate</Button>
+    
+    <TableView fx:id="resultView" GridPane.columnIndex="0" GridPane.rowIndex="1" >
+     <columns>
+          <TableColumn text="Employee ID #1">
+          <cellValueFactory>
+          <PropertyValueFactory property="empIdOne" />
+          </cellValueFactory>
+          </TableColumn>
+          
+          <TableColumn text="Employee ID #2">
+          <cellValueFactory><PropertyValueFactory property="empIdTwo" />
+          </cellValueFactory>
+          </TableColumn>
+          
+          <TableColumn text="Project ID">
+          <cellValueFactory><PropertyValueFactory property="projectId" />
+          </cellValueFactory>
+          </TableColumn>
+          
+          <TableColumn text="Days worked">
+          <cellValueFactory><PropertyValueFactory property="overlappedDays" />
+          </cellValueFactory>
+          </TableColumn>
+     </columns>    
+</TableView>
+</VBox>
